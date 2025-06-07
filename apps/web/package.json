@@ -20,6 +20,7 @@
     "@spayd/eslint-config": "workspace:*",
     "@spayd/typescript-config": "workspace:*",
     "@spayd/config": "workspace:*",
+    "@spayd/database": "workspace:*",
     "@types/node": "^22.15.3",
     "@types/react": "19.1.0",
     "@types/react-dom": "19.1.1",

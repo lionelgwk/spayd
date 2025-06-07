@@ -1,6 +1,7 @@
 import Image, { type ImageProps } from "next/image";
 import { Button } from "@spayd/ui/button";
 import styles from "./page.module.css";
+import { prisma } from "@spayd/database";
 
 type Props = Omit<ImageProps, "src"> & {
   srcLight: string;
@@ -18,7 +19,8 @@ const ThemeImage = (props: Props) => {
   );
 };
 
-export default function Home() {
+export default async function Home() {
+  const user = await prisma.user.findFirst();
   return (
     <div className={styles.page}>
       <main className={styles.main}>
@@ -37,6 +39,8 @@ export default function Home() {
           </li>
           <li>Save and see your changes instantly.</li>
         </ol>
+
+        <div className={styles.page}>{user?.name ?? "No user added yet"}</div>
 
         <div className={styles.ctas}>
           <a

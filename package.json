@@ -1,5 +1,5 @@
 {
-  "name": "my-turborepo",
+  "name": "spayd",
   "private": true,
   "scripts": {
     "build": "turbo run build",
@@ -11,6 +11,8 @@
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.8",
     "autoprefixer": "^10.4.21",
+    "eslint": "^9.28.0",
+    "eslint-config-next": "^15.3.3",
     "prettier": "^3.5.3",
     "tailwindcss": "^4.1.8",
     "turbo": "^2.5.4",

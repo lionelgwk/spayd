@@ -1,0 +1,28 @@
+{
+  "name": "@spayd/config",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Shared Tailwind configuration",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "tailwind-variants": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.3",
+    "tailwindcss": "^4.1.8",
+    "typescript": "^5.8.3"
+  },
+  "exports": {
+    "./tailwind.config": "./tailwind.config.ts",
+    "./postcss.config.mjs": "./postcss.config.mjs"
+  }
+}

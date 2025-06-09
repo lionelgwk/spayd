@@ -1,8 +1,47 @@
 {
   "branches": ["main"],
   "plugins": [
-    "@semantic-release/commit-analyzer",
-    "@semantic-release/release-notes-generator",
+    [
+      "@semantic-release/commit-analyzer",
+      {
+        "preset": "conventionalcommits",
+        "releaseRules": [
+          { "type": "v0feat", "release": "patch" },
+          { "type": "v0fix", "release": "patch" },
+          { "type": "v0breaking", "release": "minor" },
+          { "type": "feat", "release": "minor" },
+          { "type": "fix", "release": "patch" },
+          { "type": "perf", "release": "patch" },
+          { "type": "refactor", "release": "patch" },
+          { "type": "chore", "release": false },
+          { "type": "docs", "release": false },
+          { "type": "test", "release": false },
+          { "type": "ci", "release": false },
+          { "breaking": true, "release": "major" }
+        ]
+      }
+    ],
+    [
+      "@semantic-release/release-notes-generator",
+      {
+        "preset": "conventionalcommits",
+        "presetConfig": {
+          "types": [
+            { "type": "v0feat", "section": "🌟 New Features (v0)" },
+            { "type": "v0fix", "section": "🐛 Fixes (v0)" },
+            { "type": "v0breaking", "section": "⚠️ Breaking Changes (v0)" },
+            { "type": "feat", "section": "🌟 New Features" },
+            { "type": "fix", "section": "🐛 Fixes" },
+            { "type": "perf", "section": "⚡ Performance Improvements" },
+            { "type": "refactor", "section": "🧼 Code Refactoring" },
+            { "type": "docs", "section": "📝 Documentation" },
+            { "type": "test", "section": "🧪 Tests" },
+            { "type": "chore", "section": "🧹 Maintenance" },
+            { "type": "style", "section": "🎨 Code Style" }
+          ]
+        }
+      }
+    ],
     [
       "@semantic-release/changelog",
       {

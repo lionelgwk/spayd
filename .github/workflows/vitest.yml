@@ -44,6 +44,10 @@ jobs:
 
       - name: Build packages
         run: pnpm build
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
 
       - name: Run Vitest tests
         run: pnpm test
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}

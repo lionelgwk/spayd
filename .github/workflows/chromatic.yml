@@ -1,13 +1,16 @@
 # .github/workflows/chromatic.yml
 name: Chromatic
+
 permissions:
   contents: read
+
 on:
   push:
     branches:
       - main
   pull_request:
     types: [opened, reopened, synchronize]
+    
 jobs:
   chromatic:
     runs-on: ubuntu-latest
@@ -17,9 +20,9 @@ jobs:
           fetch-depth: 0
 
       - name: Install pnpm
-        uses: pnpm/action-setup@v2
+        uses: pnpm/action-setup@v4
         with:
-          version: latest
+          run_install: false
 
       - name: Setup Node.js
         uses: actions/setup-node@v4

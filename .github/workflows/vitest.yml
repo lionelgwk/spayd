@@ -1,30 +1,29 @@
-name: Release
+name: Vitest
 
 permissions:
-  contents: write
-  issues: write
-  pull-requests: write
+  contents: read
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
+  pull_request:
+    branches: [main]
+    types: [opened, edited, synchronize]
 
 jobs:
-  release:
+  test:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v4
-        with:
-          persist-credentials: false
 
       - name: Install pnpm
         uses: pnpm/action-setup@v4
         with:
           run_install: false
 
-      - uses: actions/setup-node@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: lts/*
           cache: pnpm
@@ -46,7 +45,12 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Run semantic-release
-        run: pnpm exec semantic-release
+      - name: Build packages
+        run: pnpm build
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+
+      - name: Run Vitest tests
+        run: pnpm test
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}

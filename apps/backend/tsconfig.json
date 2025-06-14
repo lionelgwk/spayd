@@ -1,0 +1,9 @@
+{
+  "extends": "@spayd/typescript-config/node.json",
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "dist",
+    "strict": true
+  },
+  "include": ["src", "types"]
+}

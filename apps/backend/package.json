@@ -1,0 +1,38 @@
+{
+  "name": "@spayd/backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon",
+    "build": "tsup src/index.ts --format cjs --dts",
+    "start": "node dist/index.js",
+    "lint": "eslint src --ext .ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fastify/cors": "^11.0.1",
+    "@fastify/helmet": "^13.0.1",
+    "@fastify/sensible": "^6.0.3",
+    "@fastify/type-provider-typebox": "^5.1.0",
+    "@sinclair/typebox": "^0.34.33",
+    "@spayd/database": "workspace:*",
+    "@spayd/trpc": "workspace:*",
+    "@spayd/typescript-config": "workspace:*",
+    "@trpc/server": "^11.4.0",
+    "fastify": "^5.3.3",
+    "fastify-plugin": "^5.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.1",
+    "nodemon": "^3.1.10",
+    "tsup": "^8.5.0",
+    "tsx": "^4.20.2",
+    "typescript": "^5.8.3"
+  },
+  "exports": {
+    ".": "./src/index.ts"
+  }
+}

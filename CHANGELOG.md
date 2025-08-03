@@ -1,3 +1,9 @@
+## [0.0.3](https://github.com/lionelgwk/spayd/compare/v0.0.2...v0.0.3) (2025-08-03)
+
+### 🧼 Code Refactoring
+
+* **backend:** reuse of PrismaClient context and added test route ([#6](https://github.com/lionelgwk/spayd/issues/6)) ([dcdefba](https://github.com/lionelgwk/spayd/commit/dcdefba10935d8143dde3bbe3c85d3f3707a59a6))
+
 ## [0.0.2](https://github.com/lionelgwk/spayd/compare/v0.0.1...v0.0.2) (2025-08-03)
 
 ### 🌟 New Features (v0)
